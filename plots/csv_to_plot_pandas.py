@@ -53,4 +53,9 @@ with module.window("Main Window"):
                                         "Plasma", "Hot", "Cool", "Pink", "Jet"],
                     width=500, num_items=3, callback=colormap_callback)
     gui.add_plot("Plot", height=-1)
+
+    # On clicking "Plot data" button, notify that csv file was saved
+    with module.popup("Plot data", "Popup ID", mousebutton=gui.mvMouseButton_Left):
+        gui.add_text("CSV file saved!")
+
 gui.start_dearpygui(primary_window="Main Window")
